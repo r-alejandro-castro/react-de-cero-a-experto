@@ -1,17 +1,20 @@
-// Template String ``
+// Arreglos en JS
 
-const nombre = 'Rodolfo';
-const apellido = 'Castro';
+// const arreglo = new Array( 100);
+const arreglo = [1,2,3,4];
 
-// const nombreCompleto = nombre + '' + apellido;
-const nombreCompleto = `${nombre} ${apellido}`;
+// arreglo.push(1)
+// arreglo.push(2)
+// arreglo.push(3)
+// arreglo.push(4)
 
-// A esto `` se llama backtrick/Back Quote 
+const arreglo2 = [...arreglo, 5];
+// arreglo.push(5)
 
-console.log(nombreCompleto);
+const arreglo3 = arreglo2.map(function(numero){
+    return numero = 2;
+})
 
-function getSaludo(nombre) {
-    return 'Hola ' + nombre;
-}
-
-console.log(`Este es un saludo: ${getSaludo(nombre)}`)
+console.log(arreglo);
+console.log(arreglo2);
+console.log(arreglo3);
