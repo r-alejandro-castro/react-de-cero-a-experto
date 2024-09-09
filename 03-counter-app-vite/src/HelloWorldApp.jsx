@@ -1,21 +1,21 @@
-const saludo = [1,2,3,4,5];
-const suma = 2+2;
-const persona = {
-    Edad: '22',
-    Nombre: 'Rodolfo'
-};
-const promesa = async() => 2+2;
+// const saludo = 'Rodolfo';
+// const suma = 2+2;
+// const persona = {
+//     Edad: '22',
+//     Nombre: 'Rodolfo'
+// };
+// const promesa = async() => 2+2;
 
-export const HelloWorldApp = () => {
-    return (        
-        <>
-            <h1>{saludo}</h1>
-            <h2>{suma}</h2>
+// export const HelloWorldApp = () => {
+//     return (        
+//         <>
+//             <h1>{saludo}</h1>
+//             <h2>{suma}</h2>
 
-            <h3>{JSON.stringify(persona)}</h3>
-            <h3>{persona.Edad}</h3>
+//             <h3>{JSON.stringify(persona)}</h3>
+//             <h3>{persona.Edad}</h3>
 
-            <h2>{promesa}</h2>
-        </>
-    );
-}
+//             <h2>{promesa}</h2>
+//         </>
+//     );
+// }
