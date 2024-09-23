@@ -11,8 +11,8 @@ export const getImagen = async() => {
         return url;
 
     } catch (error) {
-        console.error(error)
-        return 'No se pudo obtener la imagen';
+        // console.error(error)
+        return 'No se pudo obtener la imagen'
     }
     
 }
