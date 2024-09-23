@@ -9,7 +9,7 @@ import { FirstApp } from './FistApp';
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         {/* <HelloWorldApp /> */}
-        <FirstApp title={'Hola'} title1={'titulo'}/> 
+        <FirstApp title={'Hola'} subtitle={'Mundo'} />
         {/* <CounterApp value={0} /> */}
     </React.StrictMode>
 );
