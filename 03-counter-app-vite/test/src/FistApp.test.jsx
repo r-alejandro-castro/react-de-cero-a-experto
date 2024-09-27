@@ -1,4 +1,4 @@
-import { getAllByAltText, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { FirstApp } from '../../src/FistApp';
 
 describe('Pruebas en <FirstApp />', () => {
@@ -24,13 +24,13 @@ describe('Pruebas en <FirstApp />', () => {
 
         const title = 'Hola mundo';
         const subtitle = 'Hola soy un subtitulo';
-        const { getAllByAltText } = render(
+        const { getAllByText } = render(
             <FirstApp
                 title={title}
                 subtitle={subtitle}
             />
         );
-        expect(getAllByAltText(subtitle).length).toBe(2);
+        expect(getAllByText(subtitle).length).toBe(2);
 
     });
 
