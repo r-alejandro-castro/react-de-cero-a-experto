@@ -1,28 +1,23 @@
-const getGifs = async() => {
-
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=OJEaO557Zklb4ckEzP79mOs74z2MG96L&q={category}&limit=20`
-  const resp = await fetch(url);
-  const {data} = await resp.json();
-
-  const gifs = data.map( (img) => ({
-
-    id: img.id,
-    title: img.title,
-    url: img.images.downsized_medium.url
-  }));
-
-  console.log(gifs);
-  return gifs;
-}
+import { getGifs } from "../helpers/getGifs";
+import { useState, useEffect } from "react";
 
 export const GifGrid = ({ category }) => {
 
+  const [counter, setCounter] = useState(10);
 
-  getGifs(category);
+  useEffect ( () => {
+    getGifs(category);
+
+    // [] al dejar este array vacío, le estamos indicado que no queremos que se ejecute el useEffect una vez
+
+  }, []);
 
   return (
     <>
         <h3>{category}</h3>
+
+        <h5>{counter}</h5>
+        <button onClick={() => setCounter(counter + 1)}>+1</button>
     </>
   )
 };
