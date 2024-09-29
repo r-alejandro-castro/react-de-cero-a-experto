@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { AddCategory } from './components/AddCategory.jsx'
-import { GifGrid } from './components/GifGrid.jsx';
+import { AddCategory, GifGrid } from './components'
 
 export const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState(['Prueba 1']);
+    const [categories, setCategories] = useState(['Minecraft']);
 
     const onAddCategory = (newCategory) => {
         if(categories.includes(newCategory)) return;
@@ -20,7 +19,6 @@ export const GifExpertApp = () => {
             onNewCategory={onAddCategory}
         />
 
-        {/* Principales cambios aqui */}
         {    
             categories.map( (category) => 
                 <GifGrid
@@ -33,5 +31,3 @@ export const GifExpertApp = () => {
     </div>
   )
 }
-
-//OJEaO557Zklb4ckEzP79mOs74z2MG96L

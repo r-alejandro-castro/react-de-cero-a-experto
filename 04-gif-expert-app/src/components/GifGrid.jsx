@@ -1,23 +1,29 @@
-import { getGifs } from "../helpers/getGifs";
-import { useState, useEffect } from "react";
+import useFetchGifs from "../hooks/useFetchGifs";
+import GifItem from "./GifItem";
 
 export const GifGrid = ({ category }) => {
 
-  const [counter, setCounter] = useState(10);
+  //hoks
+  const { images, isLoading} = useFetchGifs(category);
 
-  useEffect ( () => {
-    getGifs(category);
-
-    // [] al dejar este array vacío, le estamos indicado que no queremos que se ejecute el useEffect una vez
-
-  }, []);
+  console.log(isLoading)
 
   return (
     <>
-        <h3>{category}</h3>
+      <h3>{category}</h3>
 
-        <h5>{counter}</h5>
-        <button onClick={() => setCounter(counter + 1)}>+1</button>
+      { isLoading && <h2>Cargando...</h2> }
+
+      <div className="card-grid">
+        {
+          images.map( (image) =>
+              <GifItem
+                key={image.id}
+                {...image}
+              />
+          )
+        }
+      </div>
     </>
   )
 };
